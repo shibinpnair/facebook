@@ -1,0 +1,387 @@
+<html>
+<head>
+
+<script type="text/javascript">
+function val()
+{
+var y,x,text;
+
+x=document.f1.uname.value;
+ if(x=="")
+{
+text="username field is blank";
+}
+else
+{
+text="";
+}
+document.getElementById("sam").innerHTML=text;
+
+y=document.f1.pswrd.value;
+
+if(y=="")
+{
+text="password field is blank";
+}
+else if(y.length<="4")
+{
+text="small!";
+}
+else if(y.length=="5"||y.length=="6"||y.length=="7")
+{
+text="medium!";
+}
+else if(y.length>="8")
+{
+text="Strong!";
+}
+else
+{
+text="";
+}
+document.getElementById("demo").innerHTML=text;
+
+
+}
+
+function ac()
+{
+
+
+fn=document.f2.fname.value;
+sn=document.f2.sn.value;
+em=document.f2.em.value;
+rem=document.f2.rem.value
+dy=document.f2.dy.value;
+mn=document.f2.mn.value;
+yr=document.f2.yr.value;
+m=document.f2.m.value;
+f=document.f2.f.value;
+
+
+
+ if(fn=="")
+{
+text="firstname field is blank";
+}
+else
+{
+text="";
+}
+document.getElementById("demo1").innerHTML=text;
+
+if(sn=="")
+{
+text="<br>surname field is blank";
+}
+else
+{
+text="";
+}
+document.getElementById("demo2").innerHTML=text;
+
+
+
+if(em=="")
+{
+text="email or mob no.<br> field is blank";
+}
+else
+{
+test="";
+}
+document.getElementById("de4").innerHTML=text;
+
+
+  
+
+
+if(rem==em)
+{
+text="";
+}
+else
+{
+text="not match with previous<br> email"
+}
+document.getElementById("demo4").innerHTML=text;
+
+if(dy=="")
+{
+text="<br>enter day";
+}
+else
+{
+text="";
+}
+document.getElementById("demo5").innerHTML=text;
+
+if(mn=="")
+{
+text="month";
+}
+else
+{
+text="";
+}
+document.getElementById("demo6").innerHTML=text;
+
+if(yr=="")
+{
+text="year";
+}
+else
+{
+text="";
+}
+document.getElementById("demo7").innerHTML=text;
+
+if(m=="" || f=="")
+{
+text="<br>specify gender";
+}
+else
+{
+text="";
+}
+document.getElementById("demo8").innerHTML=text;
+
+   
+
+var str =document.f2.em.value; 
+var res=str.split("@");
+var re=res[1].split(".");
+ 
+
+if(res[0].match(/[A-Z]|[a-z]|[0-9]/g) && re.length<=3 && re[0].length<=5 && res[0].match(/[A-Z]|[a-z]/g) && res[1].match(/[A-Z]|[a-z]/g))
+ {
+ text="valid email";
+ }
+ else
+ {
+ text="invalid email";
+ }
+ document.getElementById("dem4").innerHTML=text;
+
+
+if(fn != "" && sn != "" && em != "" && rem != '' && dy != '' && mn != '' && yr != '' && re.length<=3 && re[0].length<="5" )
+{
+text="create account successfully";
+}
+else
+{
+text="";
+}
+document.getElementById("demo9").innerHTML = text; 
+
+}
+</script>
+
+<title>FACEBOOK</title>
+<style>
+
+ .crt 
+   {
+    font-family:verdana;
+    font-size:20;
+    width:500px;
+    height:400px;
+    margin-left:900px;
+    margin-top:50px;
+    }
+ .usr
+   {
+   width:100%;
+   height:100px; 
+   background-color:#3b5998;
+   
+   }
+ .fcb
+   {
+    font-family:verdana;
+    width:600px;
+    height:200px;
+    margin-top:-400px;
+    margin-left:200px;
+   }
+ 
+   table
+   {
+   margin-left:900px;
+   margin-top:-50px;
+   }
+   td
+   {
+   width:150; 
+   height:30;
+   horizontzl-align:middle;
+   }
+   .img
+   {
+   margin-right:1000;
+   }
+   body
+   {
+   background:linear-gradient(to bottom right,white,#bcbdc4);
+   }
+   .demo
+   {
+  
+  font-size:23;
+  color:red;
+  margin-left:650;
+  margin-top:-90;
+  height:600px;
+   }
+</style>
+</head>
+<body>
+
+<div class="usr">
+<img src="f.jpg" width="350" height="50" class="img">
+<form name="f1">
+<table>
+<tr>
+<td><font color="white">
+username</font>
+</td>
+<td><font color="white">
+password</font>
+</td>
+</tr>
+
+<tr>
+<td>
+
+<input type="text" id="uname">
+</td>
+<td>
+
+<input type="password" id="pswrd">
+
+</td>
+
+<td>
+<input type="button" value="login" onclick="val()">
+</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="cb"><font color="white">keep logged me in</font></td>
+<td><font color="white">forgot the password?</font></td>
+</tr>
+<tr>
+<td>
+<p id="sam" style="color:red;"></p>
+</td>
+<td>
+<p id="demo" style="color:red;"></p>
+</td>
+</tr>
+</table>
+</form>
+</div>
+
+
+
+
+<div class="crt">
+<h1>Create an account</h1>
+<h4>it's free and always will be</h4>
+<form name="f2">
+
+
+<input type="text" value="" placeholder="FirstName"  name="fname" size="20" id="fname">&nbsp;
+
+
+
+<input type="text" value="" placeholder="SurName" name="sname" size="20" id="sn"><br><br>
+
+
+
+<input type="text" value="" placeholder="Email or mobile number" size="46" id="em"><br><br>
+
+
+
+<input type="text" value="" placeholder="Re-enter email or mobile number" size="46" id="rem">
+
+
+<p>Birthday</p>
+<select id="dy">
+<option value="">Day
+</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+<select id="mn">
+<option value="">Month
+</option>
+<option value="1">Jan</option>
+<option value="2">Feb</option>
+<option value="3">Mar</option>
+<option value="4">Apr</option>
+<option value="5">May</option>
+</select>
+<select id="yr">
+<option value="">Year
+</option>
+<option value="2012">2012</option>
+<option value="2013">2013</option>
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+</select>
+<font size="1" color="#45619d">
+why do i need to provide my
+date of birth
+</font>
+
+<p>
+<input type="radio" name="m" id="m">male
+<input type="radio" name="m" id="f">female
+</p>
+
+<p>
+<font size="2" color="#45619d">By clicking create account,you agree to our terms and that
+</font><br>
+<font size="2" color="#45619d">you have read out data policy,including our cookie use.</font>
+</p>
+
+<input type="button" value="Create an account" size="6" onclick="ac()"><label id="demo9" style="color: red"> </label>
+
+<p><font size="2" color="#45619d">Create a page for a celebrity,band or business</font></p>
+
+</form>
+</div>
+
+<div class="fcb">
+<font size="4px" color="#45619d"><b>
+Facebook helps you to connect and share with the<br> 
+people in your life<b></font>
+<img src="c.png" width="450" height="150">
+</div>
+
+<div class="demo">
+<form>
+<label id="demo1"> </label>
+<label id="demo2"> </label>
+<p id="demo3"> </p>
+<p id="dem4"> </p>
+<p id="de4"> </p>
+<p id="demo4"> </p>
+<label id="demo5"> </label>
+<label id="demo6"> </label>
+<label id="demo7"> </label>
+<p id="demo8"> </p>
+
+</form>
+</div>
+
+
+
+
+
+</body>
+</html>
